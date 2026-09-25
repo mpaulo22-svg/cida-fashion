@@ -271,10 +271,10 @@ function greetingWord(){
 }
 function brandMarkHTML(size, withWordmark){
   size = size || 96;
-  var ring = '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:999px;background:linear-gradient(135deg,var(--gold-1) 0%,var(--gold-2) 100%);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;margin:0 auto;">' +
-    '<span class="serif" style="font-size:' + Math.round(size*0.42) + 'px;font-weight:600;color:var(--accent);letter-spacing:1px;">CF</span></div>';
-  var word = withWordmark ? ('<div class="serif" style="margin-top:10px;font-size:' + Math.round(size*0.19) + 'px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-align:center;">Cida Fashion</div>') : '';
-  return '<div>' + ring + word + '</div>';
+  // The approved logo art already includes the "Cida Fashion" wordmark baked in,
+  // so it is always shown as a single image at a legible width.
+  var w = Math.round(size * 1.9);
+  return '<div><img src="logo.png" alt="Cida Fashion" style="width:' + w + 'px;height:auto;display:block;margin:0 auto;" /></div>';
 }
 
 /* ---------- state ---------- */
